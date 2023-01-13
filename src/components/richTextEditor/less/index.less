@@ -1,0 +1,121 @@
+.cms-rich-text-root {
+  position: relative;
+
+  // 工具栏的样式
+  .cms-rich-text-toolbar {
+    height: 40px;
+    line-height: 24px;
+
+    .cms-rich-text-toolbar-icon {
+      display: inline-block;
+      width: 28px;
+      height: 24px;
+      text-align: center;
+
+      img {
+        cursor: pointer;
+        width: 16px;
+      }
+    }
+  }
+
+  // 编辑框内容的样式
+  .cms-rich-text-content {
+    .ql-editor {
+      overflow-x: hidden;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .cms-rich-text-latex {
+      display: inline-block; // 保证公式后面可以出现光标
+    }
+
+    .cms-rich-text-tts {
+      display: inline-block; // 保证tts后面可以出现光标
+      word-break: break-word;
+    }
+
+    .cms-rich-text-audio {
+      display: block;
+    }
+
+    .cms-rich-text-underline {
+      text-decoration: none;
+      border-bottom: #333 1px solid;
+    }
+
+    .cms-rich-text-wave {
+      text-decoration: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 6'%3E%3Cpath fill='none' stroke='%23333' stroke-width='1.5px' d='M0,3 c10,-8 10,8 20,0'/%3E%3C/svg%3E")
+        repeat-x 0 100%;
+      background-size: 1em auto;
+      padding-bottom: .2em;
+    }
+
+    .cms-rich-remove-dollar-italic {
+      text-decoration: none;
+      background: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M512 942C274.9 942 82 749.11 82 512 82 274.9 274.9 82 512 82c237.11 0 430 192.9 430 430 0 237.11-192.89 430-430 430zm0-800c-204.02 0-370 165.98-370 370s165.98 370 370 370 370-165.98 370-370-165.98-370-370-370z'/%3E%3Cpath d='M512 541.55c-56.46 0-102.4-45.95-102.4-102.41s45.94-102.4 102.4-102.4 102.4 45.94 102.4 102.4c0 16.57-13.44 30-30 30s-30-13.43-30-30c0-23.38-19.02-42.4-42.4-42.4s-42.4 19.02-42.4 42.4 19.02 42.4 42.4 42.4c16.57 0 30 13.43 30 30s-13.43 30.01-30 30.01z'/%3E%3Cpath d='M509.14 680.63c-54.88 0-99.54-44.67-99.54-99.55 0-16.56 13.43-30 30-30s30 13.44 30 30c0 21.82 17.73 39.55 39.54 39.55s39.54-17.73 39.54-39.55c0-21.8-17.73-39.53-39.54-39.53-16.57 0-30-13.44-30-30.01s13.43-30 30-30c54.89 0 99.54 44.66 99.54 99.54s-44.65 99.55-99.54 99.55zm0-283.89c-16.57 0-30-13.43-30-30v-40c0-16.57 13.43-30 30-30s30.01 13.43 30.01 30v40c0 16.57-13.44 30-30.01 30z'/%3E%3Cpath d='M512 727.27c-16.57 0-30-13.44-30-30v-40c0-16.56 13.43-30 30-30s30 13.44 30 30v40c0 16.57-13.43 30-30 30z'/%3E%3C/svg%3E")
+        repeat-x 0 100%;
+      background-size: 1em auto;
+      padding-bottom: .2em;
+    }
+
+    .cms-rich-text-emphasis {
+      text-decoration: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='0.05em' fill='%23333' /%3E%3C/svg%3E")
+        repeat-x 0 100%;
+      background-size: 1em auto;
+      padding-bottom: .5em;
+    }
+
+    // 设置公式的hover和选中效果
+    .MJX-TEX {
+      white-space: normal;
+      border: 2px solid transparent;
+    }
+
+    .MJX-TEX:hover {
+      border: 2px solid #ec8c32;
+    }
+
+    .MJX-TEX-active {
+      border: 2px solid #aab6e0;
+    }
+
+    .MJX-TEX-active:hover {
+      border: 2px solid #aab6e0;
+    }
+
+    // 隐藏表格默认的调整宽度的工具栏；display: node;会让表格合并出问题
+    .qlbt-col-tool {
+      visibility: hidden;
+    }
+
+    // 覆盖块级公式渲染的样式，按行内效果展示
+    .MathJax[jax='CHTML'][display='true'] {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+
+  .quill-better-table {
+    tr {
+      height: 30px;
+    }
+  }
+
+  // showEscapeTextEl
+  #showEscapeTextEl {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    padding: 12px 15px;
+    background-color: white;
+    white-space: pre-line;
+    border: 1px solid palevioletred;
+    font-size: 13px;
+    z-index: 100;
+    line-height: 18.46px;
+  }
+}
