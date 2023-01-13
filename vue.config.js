@@ -7,7 +7,6 @@ module.exports = defineConfig({
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@tencent': path.resolve(__dirname, 'node_modules/@tencent'),
       }
     },
     devServer: {
